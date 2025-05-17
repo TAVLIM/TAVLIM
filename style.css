@@ -1,35 +1,45 @@
 /* Basic Reset and Body Styling */
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif; /* Using the font linked in HTML */
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #333; /* Default text color */
-    background-color: #f4f4f4; /* Light background */
+    color: #333;
+    background-color: #f8f8f8; /* Slightly lighter background */
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #2e7d32; /* A nice green for headings */
 }
 
 .container {
     width: 90%;
-    max-width: 1100px; /* Max width for content */
-    margin: 0 auto; /* Center the container */
-    overflow: hidden; /* Clear floats */
-    padding: 0 20px; /* Add some padding on smaller screens */
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 20px;
 }
 
 /* Header Styling */
 header {
-    background: #fff; /* White background for header */
-    padding: 10px 0;
-    border-bottom: #e8e8e8 1px solid;
+    background: #ffffff;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 header .container {
     display: flex;
-    justify-content: space-between; /* Space between logo and nav (if added) */
-    align-items: center; /* Vertically align items */
+    justify-content: space-between;
+    align-items: center;
 }
 
+/* Angepasste Logostil für das Bild */
 .logo {
-    height: 50px; /* Adjust logo size as needed */
+    height: 50px; /* Passe die Höhe des Logos an, falls nötig */
+    /* font-size: 1.8em; */ /* Nicht mehr nötig, da es ein Bild ist */
+    /* font-weight: bold; */
+    /* color: #2e7d32; */
 }
 
 /* Optional: Navigation Styling */
@@ -42,122 +52,438 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 header nav ul li a {
-    color: #333;
+    color: #555;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #2e7d32;
 }
 */
 
 /* Hero Section Styling */
 .hero {
-    background: #e0e0e0; /* Light grey background for the hero section */
+    background: linear-gradient(to bottom, #e8f5e9, #c8e6c9); /* Light green gradient */
     color: #333;
-    padding: 60px 0;
-    text-align: center; /* Center align text by default */
+    padding: 80px 0;
+    text-align: center; /* Standardmäßig zentriert */
 }
 
 .hero .container {
     display: flex;
-    flex-direction: column; /* Stack content vertically on small screens */
+    flex-direction: column; /* Standardmäßig Spalten (für Mobile) */
     align-items: center;
-    gap: 40px; /* Space between text and image */
+    gap: 40px; /* Abstand zwischen Inhalt und Bild */
 }
 
+
 .hero-content {
-    flex: 1; /* Allow content to take up space */
-    text-align: center; /* Ensure text is centered even when flexed */
+    flex: 1; /* Lässt den Inhalt Platz einnehmen */
+    text-align: center; /* Text im Hero-Bereich zentriert lassen */
 }
 
 .hero h1 {
-    margin-top: 0;
-    font-size: 3em; /* Large heading */
-    color: #5a8d32; /* Example brand color (adjust as needed) */
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #1b5e20; /* Darker green for the main headline */
 }
 
-.tagline {
+.subtitle {
     font-size: 1.5em;
+    font-weight: 600;
     margin-bottom: 20px;
+    color: #424242;
 }
 
-.hero-image {
-    flex: 1; /* Allow image container to take up space */
-    max-width: 500px; /* Max width for the image */
+.hero .description {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.hero-image img {
-    display: block; /* Remove extra space below image */
-    max-width: 100%; /* Make image responsive */
-    height: auto;
-    border-radius: 8px; /* Optional: rounded corners for the image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-}
-
-/* Optional: Button Styling */
-/*
-.btn {
+.btn-primary {
     display: inline-block;
-    background: #5a8d32;
+    background: #4caf50; /* Primary button color */
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 30px;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 600;
     transition: background 0.3s ease;
+    margin-top: 20px;
 }
 
-.btn:hover {
-    background: #456f27;
+.btn-primary:hover {
+    background: #388e3c; /* Darker green on hover */
 }
-*/
 
-/* Optional: Styling for additional sections */
-/*
+/* Stil für das Hero Bild */
+.hero-image {
+     flex: 1; /* Lässt das Bild Platz einnehmen */
+     max-width: 500px; /* Maximale Breite des Bildes */
+     /* Füge hier falls nötig spezifische Stile für das Bild hinzu */
+}
+.hero-image img {
+    display: block;
+    max-width: 100%; /* Bild ist responsive */
+    height: auto;
+    border-radius: 8px; /* Optional: abgerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Schatten */
+}
+
+
+/* Section Styling */
 .section {
-    padding: 40px 0;
-    background: #fff;
-    border-bottom: #e8e8e8 1px solid;
+    padding: 60px 0;
     text-align: center;
 }
 
-.section:nth-of-type(odd) {
-    background: #f9f9f9; /* Alternate background color */
+.section:nth-of-type(even) {
+    background-color: #e8f5e9; /* Alternate background for sections */
 }
 
 .section h2 {
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+/* Features Section Styling */
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.feature-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left; /* Align feature text left */
+}
+
+.feature-item h3 {
+    margin-top: 0;
+    color: #333; /* Darker color for feature titles */
+}
+
+.feature-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Optional: Icon styling */
+/*
+.feature-item i {
+    color: #4caf50;
+    margin-bottom: 15px;
 }
 */
+
+/* Pricing Section Styling */
+.pricing-intro {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.pricing-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for plans */
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.plan-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px); /* Lift card on hover */
+}
+
+.plan-card.featured {
+    border: 3px solid #4caf50; /* Highlight the featured plan */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.plan-card h3 {
+    font-size: 1.8em;
+    margin-top: 0;
+    color: #333;
+}
+
+.price {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2e7d32;
+    margin: 20px 0;
+}
+
+.price span {
+    font-size: 0.6em;
+    font-weight: 400;
+    color: #555;
+}
+
+.plan-description {
+    font-size: 1.1em;
+    color: #555;
+    min-height: 40px; /* Ensure consistent height */
+}
+
+.plan-card h4 {
+    font-size: 1.2em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.plan-card ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: #555;
+}
+
+.plan-card ul li::before {
+    content: '✅'; /* Checkmark bullet */
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: #ff9800; /* Secondary button color (e.g., orange) */
+    color: #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #f57c00; /* Darker orange on hover */
+}
+
+/* Additional Services Styling */
+.additional-services {
+    margin-top: 60px;
+    text-align: left; /* Align service text left */
+}
+
+.additional-services h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.service-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.service-item h4 {
+    margin-top: 0;
+    color: #2e7d32;
+    font-size: 1.3em;
+}
+
+.service-price {
+     font-size: 1.4em;
+    font-weight: 600;
+    color: #ff9800;
+    margin: 10px 0;
+}
+
+.service-price span {
+     font-size: 0.7em;
+    font-weight: 400;
+    color: #555;
+}
+
+.service-item ul {
+     list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.service-item ul li {
+     margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    color: #555;
+}
+.service-item ul li::before {
+    content: '•'; /* Simple bullet */
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+
+.service-setup-price {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+}
+
+
+.btn-tertiary {
+     display: inline-block;
+    background: #e0e0e0; /* Tertiary button color (e.g., light grey) */
+    color: #333;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-tertiary:hover {
+    background: #c7c7c7; /* Darker grey on hover */
+}
+
+
+/* Call to Action Section */
+.call-to-action {
+    background: linear-gradient(to top, #e8f5e9, #c8e6c9); /* Match hero gradient */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.call-to-action h2 {
+     color: #1b5e20;
+    margin-bottom: 20px;
+}
+
+.call-to-action h3 {
+    font-size: 1.8em;
+    color: #2e7d32;
+    margin-bottom: 30px;
+}
+
+.contact-link {
+    margin-top: 25px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.contact-link a {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-link a:hover {
+    text-decoration: underline;
+}
+
 
 /* Footer Styling */
 footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 20px; /* Space above the footer */
+    padding: 25px 0;
+    font-size: 0.9em;
 }
 
-/* Responsive Design */
+/* Responsive adjustments */
 @media (min-width: 768px) {
+     /* Hero Sektion im Querformat nebeneinander */
     .hero .container {
-        flex-direction: row; /* Arrange content side-by-side on larger screens */
-        text-align: left; /* Align text to the left */
+        flex-direction: row;
+        text-align: left; /* Text im Hero-Bereich linksbündig */
     }
 
     .hero-content {
-        text-align: left; /* Ensure text is left-aligned when side-by-side */
-        padding-right: 40px; /* Add space between text and image */
+         text-align: left; /* Stellt sicher, dass der Text links bleibt */
+         padding-right: 40px; /* Abstand zwischen Text und Bild */
     }
+
 
     .hero h1 {
-        font-size: 4em; /* Larger heading on bigger screens */
+        font-size: 4em; /* Größere Überschrift auf größeren Bildschirmen */
     }
 
-    .tagline {
+    .subtitle {
         font-size: 1.8em;
     }
+
+    .section h2 {
+        font-size: 2.5em;
+    }
+
+    /* Pricing und Features nutzen weiterhin Grid mit auto-fit, das passt sich automatisch an */
+
+
+}
+
+@media (max-width: 767px) {
+     /* Kleinere Überschriften auf sehr kleinen Bildschirmen */
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+    }
+
+     .section h2 {
+        font-size: 2em;
+    }
+
+     /* Stelle sicher, dass Elemente auf kleinen Bildschirmen gestapelt werden */
+    .pricing-plans {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-list {
+         grid-template-columns: 1fr;
+         gap: 20px; /* Etwas weniger Abstand */
+    }
+
+    .feature-item {
+        text-align: left; /* Features bleiben linksbündig */
+        padding: 20px;
+    }
+     /* Optional: Center icons if using FontAwesome */
+     /*
+    .feature-item i {
+        display: block;
+        margin: 0 auto 15px;
+    }
+    */
 }
