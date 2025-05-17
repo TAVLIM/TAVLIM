@@ -1,15 +1,22 @@
 /* Basic Reset and Body Styling */
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Oder eine andere saubere Schriftart wie Arial, Helvetica */
     line-height: 1.6;
     color: #333;
-    background-color: #f8f8f8; /* Slightly lighter background */
+    background-color: #f0f0f0; /* Hellerer Hintergrund */
 }
 
-h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
-    color: #2e7d32; /* A nice green for headings */
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif; /* Oder eine klare, serifenlose Schriftart für Überschriften */
+    color: #1a521b; /* Ein dunkleres, erdiges Grün */
+    margin-bottom: 0.8em; /* Konsistenter Abstand unter Überschriften */
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 1em;
+    color: #555; /* Textfarbe etwas heller als Überschriften */
 }
 
 .container {
@@ -17,15 +24,18 @@ h1, h2, h3 {
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
-    padding: 0 20px;
+    padding: 0 15px; /* Etwas weniger Padding an den Rändern */
 }
 
 /* Header Styling */
 header {
     background: #ffffff;
-    padding: 15px 0;
-    border-bottom: 1px solid #e0e0e0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 10px 0; /* Weniger Padding */
+    border-bottom: 1px solid #dcdcdc; /* Hellere Trennlinie */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* Feinerer Schatten */
+    position: sticky; /* Header bleibt beim Scrollen sichtbar */
+    top: 0;
+    z-index: 1000; /* Stellt sicher, dass der Header über anderen Inhalten liegt */
 }
 
 header .container {
@@ -34,42 +44,15 @@ header .container {
     align-items: center;
 }
 
-/* Angepasste Logostil für das Bild */
+/* Logostil für das Bild */
 .logo {
-    height: 50px; /* Passe die Höhe des Logos an, falls nötig */
-    /* font-size: 1.8em; */ /* Nicht mehr nötig, da es ein Bild ist */
-    /* font-weight: bold; */
-    /* color: #2e7d32; */
+    height: 50px; /* Passe die Höhe an */
+    display: block; /* Zentriert das Logo, falls es das einzige Element ist */
 }
-
-/* Optional: Navigation Styling */
-/*
-header nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 25px;
-}
-
-header nav ul li a {
-    color: #555;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: #2e7d32;
-}
-*/
 
 /* Hero Section Styling */
 .hero {
-    background: linear-gradient(to bottom, #e8f5e9, #c8e6c9); /* Light green gradient */
+    background: linear-gradient(to bottom, #e8f5e9 0%, #c8e6c9 100%); /* Sanfterer Gradient */
     color: #333;
     padding: 80px 0;
     text-align: center; /* Standardmäßig zentriert */
@@ -82,28 +65,49 @@ header nav ul li a:hover {
     gap: 40px; /* Abstand zwischen Inhalt und Bild */
 }
 
+@media (min-width: 768px) {
+     /* Hero Sektion im Querformat nebeneinander auf größeren Bildschirmen */
+    .hero .container {
+        flex-direction: row;
+        text-align: left; /* Text im Hero-Bereich linksbündig */
+    }
+
+    .hero-content {
+         text-align: left; /* Stellt sicher, dass der Text links bleibt */
+         padding-right: 40px; /* Abstand zwischen Text und Bild */
+    }
+
+    .hero h1 {
+        font-size: 4em; /* Größere Überschrift auf größeren Bildschirmen */
+    }
+
+    .subtitle {
+        font-size: 1.8em;
+    }
+}
+
 
 .hero-content {
-    flex: 1; /* Lässt den Inhalt Platz einnehmen */
-    text-align: center; /* Text im Hero-Bereich zentriert lassen */
+    flex: 1;
+    padding: 0 15px; /* Inneres Padding */
 }
 
 .hero h1 {
     font-size: 3em;
-    margin-bottom: 10px;
-    color: #1b5e20; /* Darker green for the main headline */
+    margin-bottom: 15px;
+    color: #1b5e20; /* Dunkleres Grün */
 }
 
 .subtitle {
     font-size: 1.5em;
     font-weight: 600;
-    margin-bottom: 20px;
-    color: #424242;
+    margin-bottom: 30px; /* Mehr Abstand */
+    color: #555;
 }
 
 .hero .description {
     font-size: 1.1em;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -111,69 +115,83 @@ header nav ul li a:hover {
 
 .btn-primary {
     display: inline-block;
-    background: #4caf50; /* Primary button color */
+    background: #4caf50; /* Primärbutton Grün */
     color: #fff;
     padding: 12px 30px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 5px; /* Leicht abgerundet */
     font-size: 1.2em;
     font-weight: 600;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.1s ease; /* Übergang für Hover/Active */
     margin-top: 20px;
+    border: none; /* Kein Standard-Button-Rand */
+    cursor: pointer; /* Zeigt, dass es klickbar ist */
 }
 
 .btn-primary:hover {
-    background: #388e3c; /* Darker green on hover */
+    background: #388e3c; /* Dunkleres Grün bei Hover */
 }
+.btn-primary:active {
+    transform: scale(0.98); /* Leichtes Zusammendrücken beim Klicken */
+}
+
 
 /* Stil für das Hero Bild */
 .hero-image {
-     flex: 1; /* Lässt das Bild Platz einnehmen */
+     flex: 1;
      max-width: 500px; /* Maximale Breite des Bildes */
-     /* Füge hier falls nötig spezifische Stile für das Bild hinzu */
+     padding: 0 15px; /* Inneres Padding */
 }
 .hero-image img {
     display: block;
-    max-width: 100%; /* Bild ist responsive */
+    max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Optional: abgerundete Ecken */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Schatten */
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Etwas prominenterer Schatten */
 }
 
 
 /* Section Styling */
 .section {
-    padding: 60px 0;
+    padding: 80px 0; /* Mehr vertikaler Abstand zwischen Sektionen */
     text-align: center;
 }
 
 .section:nth-of-type(even) {
-    background-color: #e8f5e9; /* Alternate background for sections */
+    background-color: #f8f8f8; /* Weißlicher Hintergrund für abwechselnde Sektionen */
 }
 
 .section h2 {
     font-size: 2.5em;
-    margin-bottom: 40px;
+    margin-bottom: 50px; /* Mehr Abstand nach der Sektionsüberschrift */
+    color: #1a521b;
 }
 
 /* Features Section Styling */
 .feature-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Etwas breitere Minimum-Spalten */
+    gap: 40px; /* Mehr Abstand zwischen Feature-Boxen */
 }
 
 .feature-item {
     background: #fff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: left; /* Align feature text left */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* Feinerer Schatten */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.feature-item:hover {
+    transform: translateY(-5px); /* Leichtes Anheben */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Stärkerer Schatten bei Hover */
+}
+
 
 .feature-item h3 {
     margin-top: 0;
-    color: #333; /* Darker color for feature titles */
+    color: #333;
+    font-size: 1.4em;
 }
 
 .feature-item p {
@@ -192,13 +210,13 @@ header nav ul li a:hover {
 /* Pricing Section Styling */
 .pricing-intro {
     font-size: 1.2em;
-    margin-bottom: 40px;
+    margin-bottom: 50px; /* Mehr Abstand */
     color: #555;
 }
 
 .pricing-plans {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for plans */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-bottom: 40px;
 }
@@ -209,29 +227,34 @@ header nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Für Flexbox-Layout innerhalb der Karte */
+    flex-direction: column;
+    justify-content: space-between; /* Inhalt oben und unten ausrichten */
 }
 
 .plan-card:hover {
-    transform: translateY(-10px); /* Lift card on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .plan-card.featured {
-    border: 3px solid #4caf50; /* Highlight the featured plan */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    border: 3px solid #4caf50;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
 .plan-card h3 {
     font-size: 1.8em;
     margin-top: 0;
+    margin-bottom: 15px;
     color: #333;
 }
 
 .price {
-    font-size: 2.5em;
+    font-size: 2.8em; /* Größerer Preis */
     font-weight: 700;
     color: #2e7d32;
-    margin: 20px 0;
+    margin: 15px 0 25px; /* Abstand anpassen */
 }
 
 .price span {
@@ -243,13 +266,14 @@ header nav ul li a:hover {
 .plan-description {
     font-size: 1.1em;
     color: #555;
-    min-height: 40px; /* Ensure consistent height */
+    min-height: 40px;
+    margin-bottom: 25px; /* Abstand */
 }
 
 .plan-card h4 {
     font-size: 1.2em;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin-top: 25px; /* Abstand vor Inklusive-Liste */
+    margin-bottom: 10px;
     color: #333;
 }
 
@@ -257,70 +281,88 @@ header nav ul li a:hover {
     list-style: none;
     padding: 0;
     text-align: left;
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Abstand zur Button */
+    flex-grow: 1; /* Liste nimmt verfügbaren Platz ein */
 }
 
 .plan-card ul li {
-    margin-bottom: 10px;
-    padding-left: 20px;
+    margin-bottom: 12px; /* Mehr Abstand zwischen Listenelementen */
+    padding-left: 25px; /* Mehr Platz für Checkmark */
     position: relative;
     color: #555;
 }
 
 .plan-card ul li::before {
-    content: '✅'; /* Checkmark bullet */
+    content: '✅';
     position: absolute;
     left: 0;
+    top: 0; /* Position anpassen */
     color: #4caf50;
+    font-size: 1.1em;
 }
 
 .btn-secondary {
     display: inline-block;
-    background: #ff9800; /* Secondary button color (e.g., orange) */
+    background: #ffb300; /* Freundlicheres Orange/Gelb */
     color: #fff;
     padding: 10px 25px;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.1em;
     font-weight: 600;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.1s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Button über volle Breite */
+    text-align: center;
 }
 
 .btn-secondary:hover {
-    background: #f57c00; /* Darker orange on hover */
+    background: #ffa000; /* Dunkleres Orange bei Hover */
 }
+.btn-secondary:active {
+     transform: scale(0.98);
+}
+
 
 /* Additional Services Styling */
 .additional-services {
-    margin-top: 60px;
-    text-align: left; /* Align service text left */
+    margin-top: 80px; /* Mehr Abstand */
+    text-align: left;
 }
 
 .additional-services h3 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     color: #333;
 }
 
 .service-item {
     background: #fff;
-    padding: 25px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
+    margin-bottom: 30px; /* Mehr Abstand zwischen Service-Boxen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
 
 .service-item h4 {
     margin-top: 0;
-    color: #2e7d32;
-    font-size: 1.3em;
+    color: #1a521b; /* Dunkleres Grün */
+    font-size: 1.4em;
+    margin-bottom: 10px;
 }
 
 .service-price {
-     font-size: 1.4em;
+     font-size: 1.6em; /* Größerer Service-Preis */
     font-weight: 600;
-    color: #ff9800;
-    margin: 10px 0;
+    color: #ff9800; /* Orange */
+    margin: 5px 0 15px; /* Abstand anpassen */
 }
 
 .service-price span {
@@ -342,7 +384,7 @@ header nav ul li a:hover {
     color: #555;
 }
 .service-item ul li::before {
-    content: '•'; /* Simple bullet */
+    content: '•';
     position: absolute;
     left: 0;
     color: #2e7d32;
@@ -351,41 +393,46 @@ header nav ul li a:hover {
 
 
 .service-setup-price {
-    font-size: 1.1em;
+    font-size: 1.2em; /* Etwas größer */
     font-weight: 600;
     color: #333;
-    margin-top: 20px;
+    margin-top: 25px; /* Mehr Abstand */
 }
 
 
 .btn-tertiary {
      display: inline-block;
-    background: #e0e0e0; /* Tertiary button color (e.g., light grey) */
+    background: #e0e0e0; /* Grauer Button */
     color: #333;
-    padding: 8px 20px;
+    padding: 10px 25px; /* Mehr Padding */
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 1.1em; /* Etwas größer */
     font-weight: 600;
-    transition: background 0.3s ease;
-    margin-top: 15px;
+    transition: background 0.3s ease, transform 0.1s ease;
+    margin-top: 20px; /* Mehr Abstand */
+    border: none;
+    cursor: pointer;
 }
 
 .btn-tertiary:hover {
-    background: #c7c7c7; /* Darker grey on hover */
+    background: #c7c7c7;
+}
+.btn-tertiary:active {
+     transform: scale(0.98);
 }
 
 
 /* Call to Action Section */
 .call-to-action {
-    background: linear-gradient(to top, #e8f5e9, #c8e6c9); /* Match hero gradient */
-    padding: 60px 0;
+    background: linear-gradient(to top, #e8f5e9 0%, #c8e6c9 100%); /* Match hero gradient */
+    padding: 80px 0; /* Mehr Padding */
     text-align: center;
 }
 
 .call-to-action h2 {
      color: #1b5e20;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .call-to-action h3 {
@@ -395,7 +442,7 @@ header nav ul li a:hover {
 }
 
 .contact-link {
-    margin-top: 25px;
+    margin-top: 30px; /* Mehr Abstand */
     font-size: 1.1em;
     color: #555;
 }
@@ -404,9 +451,11 @@ header nav ul li a:hover {
     color: #2e7d32;
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .contact-link a:hover {
+    color: #1a521b; /* Dunkler bei Hover */
     text-decoration: underline;
 }
 
@@ -415,42 +464,81 @@ header nav ul li a:hover {
 footer {
     background: #333;
     color: #fff;
-    text-align: center;
     padding: 25px 0;
     font-size: 0.9em;
+    text-align: center; /* Standardzentrierung für Mobile */
 }
 
-/* Responsive adjustments */
+footer .container {
+    display: flex;
+    flex-direction: column; /* Standardmäßig übereinander */
+    align-items: center;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Standardmäßig übereinander */
+    align-items: center;
+    width: 100%;
+}
+
+.copyright {
+    margin-bottom: 15px; /* Abstand unter Copyright auf kleinen Bildschirmen */
+    margin-top: 0; /* Kein extra Margin oben */
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Standardmäßig übereinander */
+    gap: 10px; /* Abstand zwischen Links */
+}
+
+.footer-links li {
+    margin: 0; /* Kein extra Margin */
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #c8e6c9; /* Helleres Grün bei Hover */
+    text-decoration: underline;
+}
+
+/* Responsive Anpassungen für Fußzeile */
 @media (min-width: 768px) {
-     /* Hero Sektion im Querformat nebeneinander */
-    .hero .container {
-        flex-direction: row;
-        text-align: left; /* Text im Hero-Bereich linksbündig */
+    footer .container {
+        flex-direction: row; /* Nebeneinander auf größeren Bildschirmen */
+        justify-content: space-between; /* Zwischenräume zwischen den Elementen */
+        text-align: left;
     }
 
-    .hero-content {
-         text-align: left; /* Stellt sicher, dass der Text links bleibt */
-         padding-right: 40px; /* Abstand zwischen Text und Bild */
+    .footer-content {
+        flex-direction: row; /* Nebeneinander */
+        justify-content: space-between; /* Zwischenräume */
+        align-items: center;
     }
 
-
-    .hero h1 {
-        font-size: 4em; /* Größere Überschrift auf größeren Bildschirmen */
+    .copyright {
+        margin-bottom: 0; /* Kein unterer Abstand mehr */
+         margin-right: 20px; /* Abstand rechts vom Copyright */
     }
 
-    .subtitle {
-        font-size: 1.8em;
+    .footer-links {
+        flex-direction: row; /* Links nebeneinander */
+         gap: 20px; /* Abstand zwischen Links nebeneinander */
     }
-
-    .section h2 {
-        font-size: 2.5em;
-    }
-
-    /* Pricing und Features nutzen weiterhin Grid mit auto-fit, das passt sich automatisch an */
-
-
 }
 
+
+/* Responsive adjustments für kleine Bildschirme (bereits vorhanden) */
 @media (max-width: 767px) {
      /* Kleinere Überschriften auf sehr kleinen Bildschirmen */
     .hero h1 {
@@ -463,6 +551,7 @@ footer {
 
      .section h2 {
         font-size: 2em;
+        margin-bottom: 30px; /* Weniger Abstand */
     }
 
      /* Stelle sicher, dass Elemente auf kleinen Bildschirmen gestapelt werden */
@@ -479,11 +568,32 @@ footer {
         text-align: left; /* Features bleiben linksbündig */
         padding: 20px;
     }
-     /* Optional: Center icons if using FontAwesome */
-     /*
-    .feature-item i {
-        display: block;
-        margin: 0 auto 15px;
+
+    .plan-card {
+        padding: 20px;
     }
-    */
+
+    .price {
+        font-size: 2.2em;
+    }
+
+    .additional-services {
+         margin-top: 50px;
+    }
+
+    .service-item {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+     .service-price {
+        font-size: 1.3em;
+     }
+
+     .call-to-action {
+        padding: 50px 0;
+     }
+
+     .call-to-action h3 {
+        font-size: 1.5em;
+     }
 }
