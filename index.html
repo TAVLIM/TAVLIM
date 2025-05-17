@@ -15,7 +15,8 @@
         <div class="container">
             <img src="logo-tavlim.png" alt="Check das Muttertier KI Logo" class="logo">
             <nav>
-                </nav>
+                <div id="google_translate_element" class="language-selector"></div>
+            </nav>
         </div>
     </header>
 
@@ -169,5 +170,15 @@
         </div>
     </footer>
 
-</body>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'de', // Originalsprache der Seite
+            includedLanguages: 'en,es,tr', // Sprachen für die Übersetzung (Englisch, Spanisch, Türkisch)
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE // Einfaches Layout
+          }, 'google_translate_element'); // ID des Elements, wo das Widget erscheinen soll
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </body>
 </html>
