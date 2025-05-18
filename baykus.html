@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EULE – Die Zukunft der Landwirtschaft fliegt</title>
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+      line-height: 1.6;
+      background-color: #fff;
+    }
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Video Background Header */
+    header {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    header video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: brightness(0.5);
+    }
+    header .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+    header .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      padding: 0 20px;
+    }
+    header h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+    }
+    header p {
+      font-size: 1.75rem;
+      font-weight: 500;
+      opacity: 0.9;
+      text-shadow: 0 0 12px rgba(0,0,0,0.7);
+    }
+
+    /* Section styling same as before */
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #eee;
+    }
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #004466;
+      text-align: center;
+    }
+    section p {
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+      font-size: 1.15rem;
+      color: #333;
+      text-align: center;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 2rem;
+    }
+    .feature-item {
+      background: #f8faff;
+      border-radius: 10px;
+      padding: 20px 25px;
+      flex: 1 1 280px;
+      max-width: 300px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      color: #0a3d62;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+    .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    blockquote {
+      font-style: italic;
+      color: #555;
+      max-width: 600px;
+      margin: 2rem auto 3rem auto;
+      text-align: center;
+      border-left: 4px solid #007BFF;
+      padding-left: 20px;
+    }
+    blockquote footer {
+      margin-top: 10px;
+      font-weight: 700;
+      color: #007BFF;
+    }
+    .specs {
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+      color: #444;
+    }
+    .specs ul {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .specs li {
+      background: #e6f0ff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      color: #003366;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #007BFF;
+      color: white;
+      padding: 18px 40px;
+      border-radius: 30px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+      max-width: 300px;
+      user-select: none;
+      border: none;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background: #0056b3;
+      outline: none;
+    }
+    .contact {
+      text-align: center;
+      padding-bottom: 40px;
+      color: #444;
+    }
+    .contact a {
+      font-weight: 700;
+      color: #007BFF;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+      header p {
+        font-size: 1.3rem;
+      }
+      section h2 {
+        font-size: 2rem;
+      }
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature-item {
+        max-width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <video autoplay muted loop playsinline>
+      <source src="eule-background.mp4" type="video/mp4" />
+      <!-- Alternativ WebM oder OGG für bessere Browser-Kompatibilität hinzufügen -->
+      Dein Browser unterstützt kein Video-Tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>EULE</h1>
+      <p>Die Zukunft der Landwirtschaft fliegt</p>
+    </div>
+  </header>
+
+  <!-- Rest der Sections unverändert -->
+  <section>
+    <div class="container">
+      <h2>Lautlos. Präzise. Nachhaltig.</h2>
+      <p>Willkommen bei <strong>EULE</strong>, der intelligentesten landwirtschaftlichen Drohne ihrer Klasse. Entwickelt mit deutscher Ingenieurskunst und türkischer Innovationskraft, ermöglicht EULE eine neue Ära der Landwirtschaft: effizient, chemiefrei und im Einklang mit der Natur.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Gebaut für eine bessere Ernte</h2>
+      <div class="features">
+        <div class="feature-item">Automatisiertes Scouting: EULE erkennt Krankheiten, Trockenstress oder Schädlinge in Echtzeit.</div>
+        <div class="feature-item">Präzisionslandwirtschaft: Punktgenaue Düngung und Bewässerung mit minimalem Ressourcenverbrauch.</div>
+        <div class="feature-item">Tiermonitoring: Überwachung von Weidetieren – stressfrei und tierschonend.</div>
+        <div class="feature-item">Nachhaltige Innovation: Kein Einsatz von Chemikalien – 100 % ökologisch und effizient.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Technologie trifft Natur</h2>
+      <blockquote>
+        "Wir bringen exzellente Ingenieurskunst in Einklang mit den Bedürfnissen der Natur."
+        <footer>– Hatice Tavli, Gründerin TAVLIM</footer>
+      </blockquote>
+      <p><strong>EULE</strong> ist mehr als nur eine Drohne – es ist ein lernendes System. Mit KI-gestützter Bilderkennung, Machine Learning und Edge-Computing vor Ort analysiert EULE Daten in Echtzeit und schlägt dir optimale Maßnahmen vor.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Fliegt leise. Denkt schnell. Arbeitet nachhaltig.</h2>
+      <div class="specs">
+        <ul>
+          <li>Flugzeit: Bis zu 4 Stunden</li>
+          <li>Reichweite: 50 km</li>
+          <li>Max. Nutzlast: 25 kg</li>
+          <li>Steuerung: Autonom & manuell (Smartphone/Tablet)</li>
+          <li>Software: Kompatibel mit allen gängigen Farm-Management-Systemen</li>
+          <li>Made in Germany & Turkey</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="text-align:center;">
+      <h2>Für Landwirte, die Verantwortung übernehmen</h2>
+      <p><strong>EULE</strong> ist nicht nur ein Produkt – es ist ein Versprechen an kommende Generationen. Ob Biohof, Plantage oder Tierhaltung: EULE unterstützt dich beim Aufbau einer regenerativen Landwirtschaft – mit Präzision, Transparenz und Intelligenz.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="text-align:center;">
+      <button class="btn-primary" onclick="window.location.href='#'">Jetzt vormerken</button>
+      <p style="margin-top:15px; font-size: 0.9rem; color:#555;">EULE wird ab 2026 exklusiv in limitierter Stückzahl verfügbar sein.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="text-align:center;">
+      <h2>EULE fliegt nicht allein</h2>
+      <p>EULE ist Teil des ganzheitlichen TAVLIM-Systems. Unsere Lösungen für Smart Farming, Bodenanalytik, Tierwohl und Energieautonomie arbeiten Hand in Hand – für eine gesunde Zukunft von Mensch, Tier und Pflanze.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container contact">
+      <h2>Kontakt & Partnerschaftsanfragen</h2>
+      <p>Möchtest du EULE in dein System integrieren, als Pilotbetrieb testen oder Partner werden?<br/>
+      Wir freuen uns auf deine Nachricht:</p>
+      <p><a href="mailto:hello@tavlim.com">hello@tavlim.com</a><br/>
+      <a href="https://www.tavlim.com" target="_blank" rel="noopener">www.tavlim.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2025 TAVLIM Ziraat. Alle Rechte vorbehalten.</p>
+                <ul class="footer-links">
+                    <li><a href="agb.html">AGB</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
