@@ -12,10 +12,78 @@
 
 
     <style>
-        /* CSS-Regel für weißen Text im Footer */
-        footer, footer p, footer ul, footer li, footer a {
-            color: white;
+        /* Allgemeine Stile */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif; /* Beispiel: Standard-Schrift für den Body */
         }
+
+        .container {
+            width: 90%; /* Responsiver Container */
+            max-width: 1200px; /* Maximale Breite des Containers */
+            margin: 0 auto; /* Zentriert den Container */
+            padding: 0 15px; /* Innenabstand für kleine Bildschirme */
+        }
+
+        header {
+            background-color: #f8f8f8; /* Beispiel-Hintergrundfarbe */
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            height: 50px; /* Beispiel-Größe des Logos */
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* CSS-Regel für weißen Text im Footer */
+        footer {
+             background-color: #333; /* Beispiel-Hintergrundfarbe */
+             color: white;
+             padding: 20px 0;
+             margin-top: 40px; /* Abstand über dem Footer */
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Footer-Inhalt umbrechen lassen */
+        }
+
+        footer .copyright {
+            font-size: 0.9rem;
+             margin-bottom: 10px; /* Abstand unter Copyright auf kleinen Bildschirmen */
+        }
+
+        footer .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+             flex-wrap: wrap; /* Links umbrechen lassen */
+        }
+
+        footer .footer-links li {
+            margin-left: 20px;
+        }
+
+         footer .footer-links a {
+             color: white; /* Linkfarbe im Footer */
+             text-decoration: none;
+         }
+
 
         /* Styling für die Button-Sektion */
         .button-section {
@@ -29,9 +97,17 @@
             flex-wrap: wrap; /* Container in die nächste Zeile umbrechen */
         }
 
+        /* Standard-Link-Unterstreichung im Button-Bereich entfernen */
+        .button-section a {
+            text-decoration: none;
+            /* Optional: Verhindern, dass der Link die Textfarbe ändert */
+            /* color: inherit; */
+        }
+
+
         /* Container für jeden Button und Text darunter */
         .button-container {
-            display: flex;
+            display: flex; /* Beibehalten, um Inhalt (Button & Label) zu zentrieren */
             flex-direction: column; /* Elemente untereinander anordnen */
             align-items: center; /* Elemente horizontal im Container zentrieren */
             text-align: center; /* Text im Container zentrieren */
@@ -42,7 +118,7 @@
             height: 120px; /* Höhe des Buttons (gleich wie Breite für rund) */
             border-radius: 50%; /* Macht den Button rund */
             border: none; /* Entfernt den Standardrahmen */
-            background-color: #007bff; /* Beispiel-Hintergrundfarbe */
+            background-color: #007bff; /* Beispiel-Hintergrundfarbe (als Fallback, falls Bild nicht lädt) */
             color: white; /* Textfarbe (für Buttons ohne Bildinhalt) */
             font-size: 1rem;
             cursor: pointer;
@@ -52,6 +128,7 @@
             overflow: hidden; /* Stellt sicher, dass der Inhalt innerhalb des runden Rahmens bleibt */
             transition: background-color 0.3s ease; /* Übergangseffekt beim Hover */
             padding: 0; /* Standard-Padding entfernen, um Bildgröße besser zu kontrollieren */
+            flex-shrink: 0; /* Verhindert, dass Buttons schrumpfen */
         }
 
          .round-button img {
@@ -66,19 +143,8 @@
             background-color: #0056b3; /* Dunklere Farbe beim Hover */
         }
 
-        /* Individuelle Farben für die Button-Hintergründe (Beispiele, falls kein Bild verwendet wird) */
-        /* Für Buttons mit Bildern dient die Hintergrundfarbe eher als Fallback oder für einen Rand */
-        .button-hazelnuts { background-color: #8B4513; } /* Braun */
-        .button-hazelnuts:hover { background-color: #A0522D; }
 
-        .button-baykus { background-color: #5A3E2E; } /* Dunkleres Braun/Grau */
-        .button-baykus:hover { background-color: #705444; }
-
-        .button-sheep-dog { background-color: #A9A9A9; } /* Dunkelgrau */
-        .button-sheep-dog:hover { background-color: #C0C0C0; }
-
-
-        /* Styling für den Text unter dem Button (ALLE Labels sind jetzt gelb, fett und in Großbuchstaben) */
+        /* Styling für den Text unter dem Button */
         .button-label {
             margin-top: 8px; /* Abstand über dem Text */
             font-size: 0.9rem;
@@ -87,6 +153,58 @@
             font-weight: bold; /* Gewicht: Bold machen */
             text-transform: uppercase; /* In Großbuchstaben umwandeln */
         }
+
+
+        /* ******************** MEDIA QUERIES FÜR MOBILE ******************** */
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 10px; /* Etwas weniger Innenabstand auf sehr kleinen Bildschirmen */
+            }
+
+            .button-section {
+                gap: 20px; /* Abstand zwischen Buttons auf kleineren Bildschirmen reduzieren */
+                padding: 20px 10px; /* Padding im Button-Bereich reduzieren */
+            }
+
+            .round-button {
+                width: 100px; /* Größe der Buttons auf kleineren Bildschirmen reduzieren */
+                height: 100px;
+            }
+
+             .button-label {
+                 font-size: 0.8rem; /* Schriftgröße des Labels etwas reduzieren */
+             }
+
+             footer .container {
+                 flex-direction: column; /* Footer-Inhalt untereinander anordnen */
+                 text-align: center;
+             }
+
+             footer .copyright {
+                 margin-bottom: 10px; /* Abstand unter Copyright */
+             }
+
+             footer .footer-links {
+                 flex-direction: column; /* Footer-Links untereinander anordnen */
+                 align-items: center; /* Links zentrieren */
+             }
+
+              footer .footer-links li {
+                  margin: 5px 0; /* Abstand zwischen den vertikalen Links */
+              }
+        }
+
+         /* Optional: Media Query für noch kleinere Bildschirme, falls 100px immer noch zu groß ist */
+        /* @media (max-width: 400px) {
+            .round-button {
+                width: 80px;
+                height: 80px;
+            }
+             .button-label {
+                 font-size: 0.7rem;
+             }
+        } */
 
     </style>
 
@@ -103,23 +221,29 @@
     </header>
 
     <section class="button-section">
-        <div class="button-container">
-            <button class="round-button button-hazelnuts">
-                 <img src="findik-logo.png" alt="Fındık Logo"> </button>
-            <p class="button-label">Fındık</p>
-        </div>
+        <a href="findik.html">
+            <div class="button-container">
+                <button class="round-button button-hazelnuts">
+                     <img src="findik-logo.png" alt="Fındık Logo"> </button>
+                <p class="button-label">Fındık</p>
+            </div>
+        </a>
 
-        <div class="button-container">
-            <button class="round-button button-baykus">
-                <img src="baykus-logo.png" alt="Baykus Logo"> </button>
-            <p class="button-label">BAYKUŞ</p>
-        </div>
+        <a href="baykus.html">
+            <div class="button-container">
+                <button class="round-button button-baykus">
+                    <img src="baykus-logo.png" alt="Baykus Logo"> </button>
+                <p class="button-label">BAYKUŞ</p>
+            </div>
+        </a>
 
-        <div class="button-container">
-             <button class="round-button button-sheep-dog">
-                 <img src="zeyno-salep-logo.png" alt="Hayvancılık Logo"> </button>
-             <p class="button-label">Hayvancılık</p>
-        </div>
+        <a href="intelligente-ueberwachung.html">
+            <div class="button-container">
+                 <button class="round-button button-sheep-dog">
+                     <img src="zeyno-salep-logo.png" alt="Hayvancılık Logo"> </button>
+                 <p class="button-label">Hayvancılık</p>
+            </div>
+        </a>
     </section>
 
     <footer>
