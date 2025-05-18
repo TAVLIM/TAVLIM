@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
+<html lang="de"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page mit Buttons</title>
@@ -118,7 +117,7 @@
             height: 120px; /* Höhe des Buttons (gleich wie Breite für rund) */
             border-radius: 50%; /* Macht den Button rund */
             border: none; /* Entfernt den Standardrahmen */
-            background-color: #007bff; /* Beispiel-Hintergrundfarbe (als Fallback, falls Bild nicht lädt) */
+            background-color: white; /* Hintergrundfarbe des Buttons: WEISS */
             color: white; /* Textfarbe (für Buttons ohne Bildinhalt) */
             font-size: 1rem;
             cursor: pointer;
@@ -140,8 +139,20 @@
         }
 
         .round-button:hover {
-            background-color: #0056b3; /* Dunklere Farbe beim Hover */
+            background-color: #ddd; /* Etwas dunklerer Hintergrund beim Hover (Beispiel für weiße Buttons) */
         }
+
+        /* Individuelle Farben für die Button-Hintergründe (Diese werden jetzt vom weißen Hintergrund überschrieben,
+           könnten aber als Fallback oder für einen Rand dienen, falls gewünscht) */
+        .button-hazelnuts { /* background-color: #8B4513; */ }
+        .button-hazelnuts:hover { /* background-color: #A0522D; */ }
+
+        .button-baykus { /* background-color: #5A3E2E; */ }
+        .button-baykus:hover { /* background-color: #705444; */ }
+
+
+        .button-sheep-dog { /* background-color: #A9A9A9; */ }
+        .button-sheep-dog:hover { /* background-color: #C0C0C0; */ }
 
 
         /* Styling für den Text unter dem Button */
@@ -153,58 +164,6 @@
             font-weight: bold; /* Gewicht: Bold machen */
             text-transform: uppercase; /* In Großbuchstaben umwandeln */
         }
-
-
-        /* ******************** MEDIA QUERIES FÜR MOBILE ******************** */
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 0 10px; /* Etwas weniger Innenabstand auf sehr kleinen Bildschirmen */
-            }
-
-            .button-section {
-                gap: 20px; /* Abstand zwischen Buttons auf kleineren Bildschirmen reduzieren */
-                padding: 20px 10px; /* Padding im Button-Bereich reduzieren */
-            }
-
-            .round-button {
-                width: 100px; /* Größe der Buttons auf kleineren Bildschirmen reduzieren */
-                height: 100px;
-            }
-
-             .button-label {
-                 font-size: 0.8rem; /* Schriftgröße des Labels etwas reduzieren */
-             }
-
-             footer .container {
-                 flex-direction: column; /* Footer-Inhalt untereinander anordnen */
-                 text-align: center;
-             }
-
-             footer .copyright {
-                 margin-bottom: 10px; /* Abstand unter Copyright */
-             }
-
-             footer .footer-links {
-                 flex-direction: column; /* Footer-Links untereinander anordnen */
-                 align-items: center; /* Links zentrieren */
-             }
-
-              footer .footer-links li {
-                  margin: 5px 0; /* Abstand zwischen den vertikalen Links */
-              }
-        }
-
-         /* Optional: Media Query für noch kleinere Bildschirme, falls 100px immer noch zu groß ist */
-        /* @media (max-width: 400px) {
-            .round-button {
-                width: 80px;
-                height: 80px;
-            }
-             .button-label {
-                 font-size: 0.7rem;
-             }
-        } */
 
     </style>
 
@@ -225,7 +184,7 @@
             <div class="button-container">
                 <button class="round-button button-hazelnuts">
                      <img src="findik-logo.png" alt="Fındık Logo"> </button>
-                <p class="button-label">Fındık</p>
+                <p class="button-label">Haselnüsse</p>
             </div>
         </a>
 
@@ -233,15 +192,14 @@
             <div class="button-container">
                 <button class="round-button button-baykus">
                     <img src="baykus-logo.png" alt="Baykus Logo"> </button>
-                <p class="button-label">BAYKUŞ</p>
-            </div>
+                <p class="button-label">BAYKUŞ</p> </div>
         </a>
 
         <a href="intelligente-ueberwachung.html">
             <div class="button-container">
                  <button class="round-button button-sheep-dog">
                      <img src="zeyno-salep-logo.png" alt="Hayvancılık Logo"> </button>
-                 <p class="button-label">Hayvancılık</p>
+                 <p class="button-label">Tierhaltung</p>
             </div>
         </a>
     </section>
@@ -262,7 +220,7 @@
     <script type="text/javascript">
         function googleTranslateElementInit() {
           new google.translate.TranslateElement({
-            pageLanguage: 'de', // Originalsprache der Seite
+            pageLanguage: 'de', // Sprache bleibt auf Deutsch
             includedLanguages: 'en,es,tr', // Sprachen für die Übersetzung (Englisch, Spanisch, Türkisch)
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE // Einfaches Layout
           }, 'google_translate_element'); // ID des Elements, wo das Widget erscheinen soll
