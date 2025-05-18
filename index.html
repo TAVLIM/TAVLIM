@@ -3,12 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check das Muttertier KI - Intelligente Überwachung</title>
+    <title>Landing Page mit Buttons</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    </head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        /* CSS-Regel für weißen Text im Footer */
+        footer, footer p, footer ul, footer li, footer a {
+            color: white;
+        }
+
+        /* Styling für die Button-Sektion */
+        .button-section {
+            display: flex; /* Container nebeneinander anordnen */
+            justify-content: center; /* Container horizontal zentrieren */
+            align-items: flex-start; /* Container am oberen Rand ausrichten */
+            min-height: 40vh; /* Mindesthöhe, damit der Bereich sichtbar ist */
+            padding: 40px 20px; /* Abstand oben/unten und links/rechts */
+            background-color: #f0f0f0; /* Heller Hintergrund für den Bereich (Beispiel) */
+            gap: 30px; /* Abstand zwischen den Button-Containern */
+            flex-wrap: wrap; /* Container in die nächste Zeile umbrechen */
+        }
+
+        /* Container für jeden Button und Text darunter */
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Elemente untereinander anordnen */
+            align-items: center; /* Elemente horizontal im Container zentrieren */
+            text-align: center; /* Text im Container zentrieren */
+        }
+
+        .round-button {
+            width: 120px; /* Breite des Buttons */
+            height: 120px; /* Höhe des Buttons (gleich wie Breite für rund) */
+            border-radius: 50%; /* Macht den Button rund */
+            border: none; /* Entfernt den Standardrahmen */
+            background-color: #007bff; /* Beispiel-Hintergrundfarbe */
+            color: white; /* Textfarbe (für Buttons ohne Bildinhalt) */
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex; /* Inhalt (Bild oder Text) zentrieren */
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Stellt sicher, dass der Inhalt innerhalb des runden Rahmens bleibt */
+            transition: background-color 0.3s ease; /* Übergangseffekt beim Hover */
+            padding: 0; /* Standard-Padding entfernen, um Bildgröße besser zu kontrollieren */
+        }
+
+         .round-button img {
+            display: block; /* Entfernt zusätzlichen Platz unter dem Bild */
+            width: 100%; /* Bild füllt die Breite des Buttons aus */
+            height: 100%; /* Bild füllt die Höhe des Buttons aus */
+            object-fit: cover; /* Bild zuschneiden, um den Bereich auszufüllen, ohne Verzerrung */
+            border-radius: 50%; /* Macht auch das Bild im runden Container rund */
+        }
+
+        .round-button:hover {
+            background-color: #0056b3; /* Dunklere Farbe beim Hover */
+        }
+
+        /* Individuelle Farben für die Button-Hintergründe (Beispiele, falls kein Bild verwendet wird) */
+        /* Für Buttons mit Bildern dient die Hintergrundfarbe eher als Fallback oder für einen Rand */
+        .button-hazelnuts { background-color: #8B4513; } /* Braun */
+        .button-hazelnuts:hover { background-color: #A0522D; }
+
+        .button-baykus { background-color: #5A3E2E; } /* Dunkleres Braun/Grau */
+        .button-baykus:hover { background-color: #705444; }
+
+        .button-sheep-dog { background-color: #A9A9A9; } /* Dunkelgrau */
+        .button-sheep-dog:hover { background-color: #C0C0C0; }
+
+
+        /* Styling für den Text unter dem Button (ALLE Labels sind jetzt gelb, fett und in Großbuchstaben) */
+        .button-label {
+            margin-top: 8px; /* Abstand über dem Text */
+            font-size: 0.9rem;
+            color: #e7c30a; /* Der gewünschte Gelbton für alle Labels */
+            font-family: 'Montserrat', sans-serif; /* Schriftart Montserrat */
+            font-weight: bold; /* Gewicht: Bold machen */
+            text-transform: uppercase; /* In Großbuchstaben umwandeln */
+        }
+
+    </style>
+
+</head>
 <body>
 
     <header>
@@ -20,140 +102,23 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Smart Monitoring für Schafe und Kühe</h1>
-                <p class="subtitle">Geburt vorhersagen. Risiko reduzieren. Pflege optimieren.</p>
-                <p class="description">Check das Muttertier KI ist Ihr Vieh-Assistent der nächsten Generation – entwickelt, um trächtige Schafe und Kühe mit Echtzeit-Einblicken und KI-gestützter Vorhersage des Geburtsbeginns zu überwachen.</p>
-                <p class="description">Entwickelt für moderne Landwirtschaft, bringt Check das Muttertier KI Ruhe während der Lamm- und Kalbsaisons mit Spitzentechnologie: biometrische Sensoren, Wärmebildkameras, Verhaltensanalyse und intelligente Warnmeldungen.</p>
-                <a href="#pricing" class="btn-primary">Jetzt starten</a>
-            </div>
-             <div class="hero-image">
-                 <img src="zeyno-salep.png" alt="Schäferhündin und Schaf">
-                 </div>
+    <section class="button-section">
+        <div class="button-container">
+            <button class="round-button button-hazelnuts">
+                 <img src="hazelnut-image-url.jpg" alt="Haselnüsse"> </button>
+            <p class="button-label">Fındık</p>
         </div>
-    </section>
 
-    <section id="how-it-works" class="section features">
-        <div class="container">
-            <h2>👩‍🌾 So funktioniert es</h2>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <h3>✅ Vitalüberwachung</h3>
-                    <p>Herzschlag, Körpertemperatur und Bewegungsmuster werden rund um die Uhr überwacht.</p>
-                </div>
-                <div class="feature-item">
-                     <h3>✅ KI, maßgeschneidert für Ihre Herde</h3>
-                    <p>Prädiktive Modelle, trainiert auf den Daten Ihrer Tiere – genauer mit jeder Nutzung.</p>
-                </div>
-                <div class="feature-item">
-                     <h3>✅ Wärmebildgebung + Computer Vision</h3>
-                    <p>Erkennen Sie frühe Anzeichen von Geburtswehen durch visuelle und thermische Verhaltensmuster.</p>
-                </div>
-                <div class="feature-item">
-                     <h3>✅ Farmer Kontrollzentrum</h3>
-                    <p>Einfaches Dashboard mit Warnungen, Einblicken und Gesundheitsupdates in Echtzeit.</p>
-                </div>
-            </div>
+        <div class="button-container">
+            <button class="round-button button-baykus">
+                <img src="baykus-logo.png" alt="Baykus Logo"> </button>
+            <p class="button-label">BAYKUŞ</p>
         </div>
-    </section>
 
-    <section id="pricing" class="section pricing">
-        <div class="container">
-            <h2>🛠️ Wählen Sie einen Plan, der zu Ihrem Betrieb passt</h2>
-            <p class="pricing-intro">Ob Sie 10 Tiere halten oder eine große Herde verwalten, wir haben eine passende Lösung für Sie:</p>
-
-            <div class="pricing-plans">
-                <div class="plan-card">
-                    <h3>🌱 Starter Plan</h3>
-                    <p class="price">€47<span> /Monat</span></p>
-                    <p class="plan-description">Perfekt für kleine Höfe und Familienbetriebe.</p>
-                    <h4>Inklusive:</h4>
-                    <ul>
-                        <li>Zugang zu unserer virtuellen Bauerngemeinschaft</li>
-                        <li>Echtzeit-Benachrichtigungssystem per App</li>
-                        <li>Rund-um-die-Uhr-Überwachung von bis zu **10 Tieren**</li>
-                        <li>Updates zu regionaler Tierarztunterstützung & Gesundheitstipps</li>
-                    </ul>
-                    <a href="#" class="btn-secondary">Jetzt starten</a>
-                </div>
-
-                <div class="plan-card featured">
-                    <h3>⚡ Smart Herd Plan</h3>
-                     <p class="price">€97<span> /Monat</span></p>
-                    <p class="plan-description">Ideal für wachsende Betriebe.</p>
-                    <h4>Inklusive:</h4>
-                     <ul>
-                        <li>Alle Starter Plan Features</li>
-                        <li>Rund-um-die-Uhr-Überwachung von **10 bis 50 Tieren**</li>
-                        <li>Erweiterte Analysen und Berichte</li>
-                    </ul>
-                    <a href="#" class="btn-secondary">Jetzt starten</a>
-                </div>
-
-                <div class="plan-card">
-                    <h3>🧠 Pro Farm Plan</h3>
-                     <p class="price">€597<span> /Monat</span></p>
-                    <p class="plan-description">Konzipiert für große Viehbetriebe.</p>
-                    <h4>Inklusive:</h4>
-                    <ul>
-                        <li>Alle Smart Herd Plan Features</li>
-                        <li>Überwachung für **über 50 Tiere**</li>
-                        <li>Vollständige Dashboard-Anpassung</li>
-                        <li>Dedizierter Account Manager</li>
-                        <li>Priorisierter Support und benutzerdefinierte Integrationen</li>
-                    </ul>
-                    <a href="#" class="btn-secondary">Jetzt starten</a>
-                </div>
-            </div>
-
-            <div class="additional-services">
-                <h3>Zusätzliche Services:</h3>
-                 <div class="service-item">
-                    <h4>⚡ Smart Herd Session</h4>
-                    <p class="service-price">€97 <span>(Einmalig)</span></p>
-                    <p>Einzelcoaching, um das Beste aus Ihren KI-Tools herauszuholen.</p>
-                    <ul>
-                        <li>1 Stunde maßgeschneiderte Einrichtungsanleitung</li>
-                        <li>WhatsApp & Dashboard Integration</li>
-                        <li>Lernen Sie Alarm-Workflows & Best Practices</li>
-                    </ul>
-                    <a href="#" class="btn-tertiary">Session buchen</a>
-                </div>
-                 <div class="service-item">
-                    <h4>🧠 Pro Farm Masterclass</h4>
-                    <p class="service-price">€497 <span>(Einmalig)</span></p>
-                    <p>30-tägige Intensivschulung für große Betriebe.</p>
-                     <ul>
-                        <li>Zwei wöchentliche 1-zu-1-Sitzungen</li>
-                        <li>Trainieren Sie Ihr Team im Umgang mit KI-Tools</li>
-                        <li>Inklusive 20 Live-Alerts, Integrationen und Setup-Sitzungen</li>
-                    </ul>
-                    <a href="#" class="btn-tertiary">Werden Sie Pro</a>
-                </div>
-                 <div class="service-item">
-                    <h4>➕ Maßgeschneiderte Einrichtung (Einmalig)</h4>
-                    <p>Jeder Hof ist einzigartig. Wir bieten eine maßgeschneiderte Einrichtung, die zu Ihren Abläufen, Ihrer Tiergröße und Ihrem Workflow passt.</p>
-                     <ul>
-                        <li>Vor-Ort- oder Remote-Hardware-Konfiguration (Kameras, Thermosensoren, Wearables)</li>
-                        <li>Angepasste App-Logik (basierend auf Tierart & Rasse)</li>
-                        <li>Alarmweiterleitung für Hofpersonal, mobile Geräte und Tierarztintegration</li>
-                    </ul>
-                    <p class="service-setup-price">Der Preis beginnt bei **€399** (Angebot basierend auf Hofgröße)</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="section call-to-action">
-        <div class="container">
-            <h2>🔔 Seien Sie alarmiert, bevor es beginnt</h2>
-            <p>Retten Sie Leben, reduzieren Sie Stress und treffen Sie informierte Entscheidungen während der kritischsten Stunden der Viehpflege.</p>
-            <h3>Check das Muttertier KI — wo Tiergesundheit auf intelligente Automatisierung trifft.</h3>
-            <a href="#pricing" class="btn-primary">Jetzt starten</a>
-            <p class="contact-link">Sie benötigen Hilfe bei der Auswahl eines Plans? <a href="#">Buchen Sie einen kostenlosen Discovery Call</a></p>
+        <div class="button-container">
+             <button class="round-button button-sheep-dog">
+                 <img src="zeyno-salep.png" alt="Schäferhündin und Schaf"> </button>
+             <p class="button-label">Hayvancılık</p>
         </div>
     </section>
 
@@ -180,5 +145,6 @@
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    </body>
+
+</body>
 </html>
